@@ -9,15 +9,14 @@ This is an single-page-app email app based on Django and JavaScript that allows 
 You can either read or watch a video https://youtu.be/AHNMoCt7SqM
 
 
-> Send Mail: User can send an email to existing user.
+> ***Send Mail***: User can send an email to existing user.
 >
->Mailbox: When a user visits their Inbox, Sent mailbox, or Archive, the appropriate mailbox loads.
+>***Mailbox***: When a user visits their Inbox, Sent mailbox, or Archive, the appropriate mailbox loads.
 Each email renders in its own box that displays who the email is from, what the subject line is, and the timestamp of the email.
 If the email is unread, it appears with a white background. If the email has been read, it appears with a gray background.
 >
->View Email: When a user clicks on an email, the user is taken to a view where they see the content of that email. User can reply to emails in inbox.
+>***View Email***: When a user clicks on an email, the user is taken to a view where they see the content of that email. User can reply to emails in inbox.
 Once the email has been clicked on, it marked as read. When viewing an Inbox email, the user is presented with a button that lets them archive the email. When viewing an Archive email, the user is presented with a button that lets them unarchive the email. 
->
 
 ---
 ## **To start the app**
