@@ -33,6 +33,6 @@ and go to http://127.0.0.1:8000/admin/ to see django admin interface.
 ---
 ## **To change database**
 
-- In your terminal, cd into the commerce directory. 
-- Run ***python manage.py makemigrations auctions*** to make migrations for the auctions app.
+- In your terminal, cd into the mail directory. 
+- Run ***python manage.py makemigrations mail*** to make migrations.
 - Run ***python manage.py migrate*** to apply migrations to your database.
