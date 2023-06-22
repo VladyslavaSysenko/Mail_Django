@@ -21,7 +21,7 @@ Once the email has been clicked on, it marked as read. When viewing an Inbox ema
 ---
 ## **To start the app**
 
-- Cd into the commerce directory. 
+- Cd into the mail directory. 
 - Run ***pip install -r requirements.txt*** to install all requirements.
 - Run ***python manage.py runserver*** to start up the Django web server, and visit the website in your browser.
 
