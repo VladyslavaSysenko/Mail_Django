@@ -1,0 +1,12 @@
+textarea {
+    min-height: 300px;
+}
+
+.email {
+    border: 2px solid grey;
+    margin-bottom: 7px;
+}
+
+button {
+    margin:0 5px;
+}
