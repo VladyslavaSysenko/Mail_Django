@@ -32,8 +32,8 @@ password - *superuser*
 and go to http://127.0.0.1:8000/admin/ to see django admin interface.
 
 ---
-## **To change database**
 
+## **To change database**
 - In your terminal, cd into the mail directory. 
 - Run ***python manage.py makemigrations mail*** to make migrations for the mail app.
 - Run ***python manage.py migrate*** to apply migrations to your database.
