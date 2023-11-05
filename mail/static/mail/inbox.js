@@ -70,11 +70,10 @@ function load_email(email_id, mailbox) {
         <div class="form-group form-control">Subject : ${email.subject}</div>
         <div class="form-group" style="white-space: pre;"><textarea class="form-control" readonly>${email.body}</textarea></div>
         <div class="form-group form-control"> ${email.timestamp}</div>
-        <button class="btn btn-primary" onclick='reply(${email.id});'> Reply </button>`
-      // Add archive button if inbox or archive
-      if (mailbox === "inbox" || mailbox === "archive"){
-        document.querySelector('#email-view').innerHTML += `<button class="btn btn-primary" onclick='archive(${email.id}, ${email.archived});'> ${email.archived ? 'Unarchive' : "Archive"} </button>`;
-      }
+        <div class='center'>
+        <button class="btn btn-info" onclick='reply(${email.id});'> Reply </button>
+        <button class="btn btn-info" onclick='archive(${email.id}, ${email.archived});'> ${email.archived ? 'Unarchive' : "Archive"} </button> 
+        </div>`
       // Mark email as read
       fetch('/emails/' + email_id, {
         method: 'PUT',
@@ -125,7 +124,7 @@ function load_mailbox(mailbox) {
   document.querySelector('#email-view').style.display = 'none';
   document.querySelector('#compose-view').style.display = 'none';
   // Show the mailbox name
-  document.querySelector('#emails-view').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>`;
+  document.querySelector('#emails-view').innerHTML = `<h2>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h2>`;
   // Show emails
   fetch('/emails/' + mailbox)
   .then(response => response.json())
@@ -137,13 +136,16 @@ function load_mailbox(mailbox) {
       elem.className = "email";
       // add content
       elem.innerHTML = `
-        <div>From : ${email.sender}</div>
-        <div>Subject : ${email.subject}</div>
-        <div> ${email.timestamp}</div>`;
+        <div><span class="aux_words">From:</span> &emsp;&emsp;${email.sender}</div>
+        <div><span class="aux_words">Subject:</span> &emsp;${email.subject}</div>
+        <div> <span class="aux_words">${email.timestamp}</span></div>`;
       // change background color
       if (email.read === true){
-        elem.style.backgroundColor = "#D3D3D3";
-      }  
+        elem.style.backgroundColor = "rgba(125, 215, 251, 0.63)";
+    }  
+      else {
+        elem.style.backgroundColor = "rgba(248, 146, 191, 0.87)"
+    }
       // Show email when clicked
       elem.addEventListener('click', function() {
         load_email(email.id, mailbox);

@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from time import strftime, localtime
 
 
 class User(AbstractUser):
@@ -23,7 +24,7 @@ class Email(models.Model):
             "recipients": [user.email for user in self.recipients.all()],
             "subject": self.subject,
             "body": self.body,
-            "timestamp": self.timestamp.strftime("%b %d %Y, %I:%M %p"),
+            "timestamp": strftime("%d %b %Y, %H:%M", localtime(self.timestamp.timestamp())),
             "read": self.read,
-            "archived": self.archived
+            "archived": self.archived,
         }
