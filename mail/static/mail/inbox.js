@@ -136,7 +136,7 @@ function load_mailbox(mailbox) {
       elem.className = "email";
       // add content
       elem.innerHTML = `
-        <div><span class="aux_words">From:</span> &emsp;&emsp;${email.sender}</div>
+        <div><span class="aux_words">From:</span>&emsp;&emsp;${email.sender}</div>
         <div><span class="aux_words">Subject:</span> &emsp;${email.subject}</div>
         <div> <span class="aux_words">${email.timestamp}</span></div>`;
       // change background color
