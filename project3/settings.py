@@ -15,6 +15,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
+RUN_SERVER_PORT = 8002
+
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Application definition
